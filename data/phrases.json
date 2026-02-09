@@ -1,0 +1,142 @@
+[
+  {
+    "id": "1",
+    "category": "boss_rant",
+    "content": "오늘도 상사의 무의미한 회의로 시간을 낭비했다. 내 시간은 소중하다.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "2",
+    "category": "boss_rant",
+    "content": "상사는 결재만 하면 되는데 왜 자꾸 일을 만드는가. 제발 좀 가만히 있어주세요.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "3",
+    "category": "boss_rant",
+    "content": "상사의 갑질은 언제까지 참아야 하는가. 나도 인간이고 싶다.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "4",
+    "category": "boss_rant",
+    "content": "일은 나한테 다 떠넘기고 성과는 상사가 가져간다. 이게 회사인가.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "5",
+    "category": "boss_rant",
+    "content": "상사의 비논리적인 지시에 지쳤다. 제발 논리적으로 생각해주세요.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "6",
+    "category": "resignation",
+    "content": "퇴사는 도망이 아니라 더 나은 선택을 향한 용기다.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "7",
+    "category": "resignation",
+    "content": "이번 달 말에 퇴사서를 낸다. 드디어 자유다.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "8",
+    "category": "resignation",
+    "content": "퇴사 후 내 인생은 내가 결정한다. 더 이상 회사에 묶이지 않는다.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "9",
+    "category": "resignation",
+    "content": "퇴사는 끝이 아니라 새로운 시작이다. 나는 할 수 있다.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "10",
+    "category": "resignation",
+    "content": "월급보다 소중한 건 내 정신 건강이다. 퇴사 준비 시작.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "11",
+    "category": "healing",
+    "content": "오늘 하루도 고생한 나 자신에게 박수를 보낸다. 잘했어.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "12",
+    "category": "healing",
+    "content": "힘들 때는 쉬어가도 괜찮아. 천천히 가도 괜찮아.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "13",
+    "category": "healing",
+    "content": "나는 충분히 잘하고 있어. 내 자신을 믿어.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "14",
+    "category": "healing",
+    "content": "완벽하지 않아도 괜찮아. 나는 나답게 살아가면 돼.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "15",
+    "category": "healing",
+    "content": "힘든 하루였지만 내일은 더 나은 날이 올 거야. 파이팅!",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "16",
+    "category": "empathy",
+    "content": "직장인의 월요병은 국민병이다. 당신만 그런 게 아니에요.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "17",
+    "category": "empathy",
+    "content": "점심시간이 하루 중 가장 행복한 시간이라는 데 동의합니다.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "18",
+    "category": "empathy",
+    "content": "퇴근길 지하철에서 느끼는 허무함, 다들 느끼는 거죠?",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "19",
+    "category": "empathy",
+    "content": "회사에서 웃는 얼굴은 가면이고, 집에 와서야 진짜 얼굴이 나온다.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "20",
+    "category": "empathy",
+    "content": "출근길에 복권 당첨을 꿈꾸는 건 직장인의 로망이다.",
+    "is_user_submitted": false,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+]
