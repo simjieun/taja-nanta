@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Category, CATEGORY_LABELS, CATEGORY_EMOJIS } from '@/types'
 import * as localData from '@/lib/localData'
 
 interface AddPhraseFormProps {
@@ -11,7 +10,6 @@ interface AddPhraseFormProps {
 export default function AddPhraseForm({ onSuccess }: AddPhraseFormProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [content, setContent] = useState('')
-  const [category, setCategory] = useState<Category>('healing')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
 
@@ -27,7 +25,7 @@ export default function AddPhraseForm({ onSuccess }: AddPhraseFormProps) {
     setIsSubmitting(true)
 
     try {
-      localData.addPhrase(category, content.trim())
+      localData.addPhrase(content.trim())
 
       // 성공
       setContent('')
@@ -73,30 +71,6 @@ export default function AddPhraseForm({ onSuccess }: AddPhraseFormProps) {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* 카테고리 선택 */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              카테고리 선택
-            </label>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-              {(['boss_rant', 'resignation', 'healing', 'empathy'] as Category[]).map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setCategory(cat)}
-                  className={`p-3 rounded-xl transition-all ${
-                    category === cat
-                      ? 'bg-emerald-500 text-white'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
-                  }`}
-                >
-                  <div className="text-2xl mb-1">{CATEGORY_EMOJIS[cat]}</div>
-                  <div className="text-sm font-medium">{CATEGORY_LABELS[cat]}</div>
-                </button>
-              ))}
-            </div>
-          </div>
-
           {/* 문구 입력 */}
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -106,7 +80,7 @@ export default function AddPhraseForm({ onSuccess }: AddPhraseFormProps) {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               rows={4}
-              className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:border-purple-500 dark:focus:border-purple-400 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+              className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-400 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
               placeholder="당신의 마음을 표현해보세요..."
             />
             <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">

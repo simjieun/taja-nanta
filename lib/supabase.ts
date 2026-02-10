@@ -12,21 +12,18 @@ export type Database = {
       phrases: {
         Row: {
           id: string
-          category: 'boss_rant' | 'resignation' | 'healing' | 'empathy'
           content: string
           is_user_submitted: boolean
           created_at: string
         }
         Insert: {
           id?: string
-          category: 'boss_rant' | 'resignation' | 'healing' | 'empathy'
           content: string
           is_user_submitted?: boolean
           created_at?: string
         }
         Update: {
           id?: string
-          category?: 'boss_rant' | 'resignation' | 'healing' | 'empathy'
           content?: string
           is_user_submitted?: boolean
           created_at?: string

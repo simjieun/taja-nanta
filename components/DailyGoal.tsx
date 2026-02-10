@@ -21,43 +21,47 @@ export default function DailyGoal({ todayCharacters, goal = 500 }: DailyGoalProp
   const isCompleted = todayCharacters >= goal
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border-2 border-gray-200 dark:border-gray-700">
+    <div className="retro-stat-card rounded-lg p-5" style={{ fontFamily: "'Courier New', 'Noto Sans KR', monospace" }}>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200">
-          오늘의 목표 {isCompleted && '🎯'}
-        </h3>
-        <div className="text-sm font-medium text-gray-600 dark:text-gray-400">
-          {todayCharacters} / {goal}자
+        <div className="text-xs retro-text-dim" style={{ letterSpacing: '0.15em' }}>DAILY MISSION</div>
+        <div className="text-xs retro-text-glow">
+          {todayCharacters} / {goal}
         </div>
       </div>
 
       {/* 진행률 바 */}
       <div className="mb-3">
-        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
+        <div className="retro-progress-track h-3 rounded-none">
           <div
-            className={`h-4 rounded-full transition-all duration-1000 ${
-              isCompleted
-                ? 'bg-green-500'
-                : 'bg-emerald-500'
-            }`}
-            style={{ width: `${Math.min(progress, 100)}%` }}
+            className="h-full rounded-none transition-all duration-1000"
+            style={{
+              width: `${Math.min(progress, 100)}%`,
+              background: isCompleted ? 'var(--retro-amber)' : 'var(--retro-green)',
+              boxShadow: isCompleted
+                ? '0 0 8px rgba(255, 176, 0, 0.4)'
+                : '0 0 8px rgba(51, 255, 51, 0.4)',
+            }}
           />
         </div>
       </div>
 
+      {/* 시각적 게이지 (ASCII 스타일) */}
+      <div className="text-xs mb-3 retro-text-dim" style={{ letterSpacing: '0.05em' }}>
+        [{'='.repeat(Math.min(Math.floor(progress / 5), 20))}
+        {'-'.repeat(Math.max(20 - Math.floor(progress / 5), 0))}]
+        {' '}{Math.min(Math.round(progress), 100)}%
+      </div>
+
       {/* 상태 메시지 */}
-      <div className="text-sm text-gray-600 dark:text-gray-400">
+      <div className="text-xs">
         {isCompleted ? (
-          <div className="flex items-center text-green-600 dark:text-green-400 font-medium">
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-            오늘의 목표를 달성했어요! 🎉
-          </div>
+          <span className="retro-text-amber">
+            *** MISSION COMPLETE ***
+          </span>
         ) : (
-          <div>
-            목표까지 {goal - todayCharacters}자 남았어요. 화이팅! 💪
-          </div>
+          <span className="retro-text-dim">
+            {goal - todayCharacters} CHARS TO GO...
+          </span>
         )}
       </div>
     </div>

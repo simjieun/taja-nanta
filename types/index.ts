@@ -1,8 +1,5 @@
-export type Category = 'boss_rant' | 'resignation' | 'healing' | 'empathy'
-
 export interface Phrase {
   id: string
-  category: Category
   content: string
   is_user_submitted: boolean
   created_at: string
@@ -29,20 +26,6 @@ export interface PracticeSession {
   accuracy: number
   duration: number
   created_at: string
-}
-
-export const CATEGORY_LABELS: Record<Category, string> = {
-  boss_rant: '상사 비난',
-  resignation: '퇴사',
-  healing: '치유',
-  empathy: '공감'
-}
-
-export const CATEGORY_EMOJIS: Record<Category, string> = {
-  boss_rant: '😤',
-  resignation: '🚀',
-  healing: '💚',
-  empathy: '🤝'
 }
 
 export const LEVEL_TITLES = [

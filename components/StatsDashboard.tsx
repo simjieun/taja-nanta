@@ -25,7 +25,7 @@ export default function StatsDashboard({ stats, recentSessions = [] }: StatsDash
 
   return (
     <div className="w-full max-w-6xl mx-auto space-y-6">
-      <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6">
+      <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">
         📊 나의 통계
       </h2>
 
@@ -56,19 +56,19 @@ export default function StatsDashboard({ stats, recentSessions = [] }: StatsDash
       </div>
 
       {/* 최고 기록 */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border-2 border-gray-200 dark:border-gray-700">
-        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">
+      <div className="bg-white dark:bg-black rounded-2xl p-6 shadow-lg border-2 border-gray-200 dark:border-neutral-800">
+        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
           🏆 최고 기록
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-emerald-50 dark:bg-emerald-950/30 rounded-xl p-4 border border-emerald-200 dark:border-emerald-800">
-            <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">최고 속도</div>
+          <div className="bg-emerald-50 dark:bg-neutral-900 rounded-xl p-4 border border-emerald-200 dark:border-neutral-800">
+            <div className="text-sm text-gray-600 dark:text-white/70 mb-1">최고 속도</div>
             <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">
               {bestWpm.toFixed(1)} <span className="text-lg">WPM</span>
             </div>
           </div>
-          <div className="bg-emerald-50 dark:bg-emerald-950/30 rounded-xl p-4 border border-emerald-200 dark:border-emerald-800">
-            <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">현재 레벨</div>
+          <div className="bg-emerald-50 dark:bg-neutral-900 rounded-xl p-4 border border-emerald-200 dark:border-neutral-800">
+            <div className="text-sm text-gray-600 dark:text-white/70 mb-1">현재 레벨</div>
             <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">
               LV {stats.level}
             </div>
@@ -78,18 +78,18 @@ export default function StatsDashboard({ stats, recentSessions = [] }: StatsDash
 
       {/* 최근 연습 기록 */}
       {recentSessions.length > 0 && (
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border-2 border-gray-200 dark:border-gray-700">
-          <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">
+        <div className="bg-white dark:bg-black rounded-2xl p-6 shadow-lg border-2 border-gray-200 dark:border-neutral-800">
+          <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
             📈 최근 연습 기록
           </h3>
           <div className="space-y-3">
             {recentSessions.slice(0, 5).map((session, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg"
+                className="flex items-center justify-between p-3 bg-gray-50 dark:bg-neutral-900 rounded-lg"
               >
                 <div className="flex-1">
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm text-gray-600 dark:text-white/70">
                     {new Date(session.created_at).toLocaleDateString('ko-KR', {
                       month: 'short',
                       day: 'numeric',
@@ -100,13 +100,13 @@ export default function StatsDashboard({ stats, recentSessions = [] }: StatsDash
                 </div>
                 <div className="flex gap-4">
                   <div className="text-right">
-                    <div className="text-sm text-gray-600 dark:text-gray-400">속도</div>
+                    <div className="text-sm text-gray-600 dark:text-white/70">속도</div>
                     <div className="font-bold text-emerald-600 dark:text-emerald-400">
                       {session.wpm} WPM
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm text-gray-600 dark:text-gray-400">정확도</div>
+                    <div className="text-sm text-gray-600 dark:text-white/70">정확도</div>
                     <div className="font-bold text-emerald-600 dark:text-emerald-400">
                       {session.accuracy.toFixed(1)}%
                     </div>

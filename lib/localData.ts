@@ -1,4 +1,4 @@
-import { Category, Phrase, UserStats, PracticeSession } from '@/types'
+import { Phrase, UserStats, PracticeSession } from '@/types'
 import phrasesData from '@/data/phrases.json'
 
 // 로컬 스토리지 키
@@ -23,17 +23,10 @@ export function getAllPhrases(): Phrase[] {
   return [...phrases, ...getUserPhrases()]
 }
 
-// 카테고리별 문구 가져오기
-export function getPhrasesByCategory(category: Category): Phrase[] {
-  const allPhrases = getAllPhrases()
-  return allPhrases.filter(p => p.category === category)
-}
-
 // 문구 추가
-export function addPhrase(category: Category, content: string): Phrase {
+export function addPhrase(content: string): Phrase {
   const newPhrase: Phrase = {
     id: `user_${Date.now()}`,
-    category,
     content,
     is_user_submitted: true,
     created_at: new Date().toISOString()
