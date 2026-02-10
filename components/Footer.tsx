@@ -15,7 +15,7 @@ export default function Footer() {
             </span>
           </p>
           <p className="text-xs text-gray-400 dark:text-white/40 mt-1">
-            © 2026 타자힐링. All rights reserved.
+            © 2026 타자난타. All rights reserved.
           </p>
         </div>
       </div>
