@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://taja-healing.vercel.app'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://taja-nanta.vercel.app'
 const SITE_NAME = '타자난타'
 const SITE_DESCRIPTION =
   '키보드를 두드려 스트레스를 날려버리세요! 타자난타는 신나는 문구를 빠르게 타이핑하며 스트레스를 해소하는 타자연습 플랫폼입니다. 두드릴수록 시원해지는 키보드 난타, 무료 온라인 한글 타자연습.'
@@ -116,6 +116,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2532708487251314"
+          crossOrigin="anonymous"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
