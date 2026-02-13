@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import PracticeContent from './PracticeContent'
 
 export const metadata: Metadata = {
@@ -14,5 +15,16 @@ export const metadata: Metadata = {
 }
 
 export default function PracticePage() {
-  return <PracticeContent />
+  return (
+    <>
+      {/* 구글 애드센스 - 타자연습 페이지에서만 로딩 */}
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2532708487251314"
+        crossOrigin="anonymous"
+        strategy="lazyOnload"
+      />
+      <PracticeContent />
+    </>
+  )
 }
