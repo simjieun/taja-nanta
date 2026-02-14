@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import TypingPractice from '@/components/TypingPractice'
 import LevelDisplay from '@/components/LevelDisplay'
@@ -35,20 +35,12 @@ export default function PracticeContent() {
     })
 
     updateStatsAfterPractice(currentPhrase.content, wpm, accuracy, duration)
-
-    setTimeout(() => {
-      loadRandomPhrase()
-    }, 3000)
   }
 
   // 첫 로드 시 자동으로 문구 불러오기
-  useState(() => {
-    const allPhrases = localData.getAllPhrases()
-    if (allPhrases.length > 0) {
-      const randomIndex = Math.floor(Math.random() * allPhrases.length)
-      setCurrentPhrase(allPhrases[randomIndex])
-    }
-  })
+  useEffect(() => {
+    loadRandomPhrase()
+  }, [loadRandomPhrase])
 
   if (!isLoaded) return null
 

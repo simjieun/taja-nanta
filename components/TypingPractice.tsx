@@ -84,6 +84,8 @@ export default function TypingPractice({ text, onComplete, onNext }: TypingPract
     const handleGlobalKeyDown = (e: KeyboardEvent) => {
       if (e.key === ' ' || e.key === 'Enter') {
         e.preventDefault()
+        // 리스너를 먼저 제거한 후 onNext 호출 (중복 호출 방지)
+        window.removeEventListener('keydown', handleGlobalKeyDown)
         onNext?.()
       }
     }
