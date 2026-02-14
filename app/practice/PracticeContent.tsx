@@ -9,19 +9,18 @@ import ShareButton from '@/components/ShareButton'
 import { Phrase } from '@/types'
 import * as localData from '@/lib/localData'
 import { useUser } from '@/hooks/useUser'
+import { usePhrases } from '@/hooks/usePhrases'
 
 export default function PracticeContent() {
   const router = useRouter()
   const { userId, userStats, todayCharacters, isLoaded, updateStatsAfterPractice } = useUser()
+  const { phrases, loading: phrasesLoading, getRandomPhrase } = usePhrases()
   const [currentPhrase, setCurrentPhrase] = useState<Phrase | null>(null)
 
   const loadRandomPhrase = useCallback(() => {
-    const allPhrases = localData.getAllPhrases()
-    if (allPhrases.length > 0) {
-      const randomIndex = Math.floor(Math.random() * allPhrases.length)
-      setCurrentPhrase(allPhrases[randomIndex])
-    }
-  }, [])
+    const next = getRandomPhrase(currentPhrase?.id)
+    if (next) setCurrentPhrase(next)
+  }, [getRandomPhrase, currentPhrase?.id])
 
   const handleTypingComplete = (wpm: number, accuracy: number, duration: number) => {
     if (!currentPhrase) return
@@ -37,12 +36,15 @@ export default function PracticeContent() {
     updateStatsAfterPractice(currentPhrase.content, wpm, accuracy, duration)
   }
 
-  // 첫 로드 시 자동으로 문구 불러오기
+  // 문구 로드 완료 시 최초 1회 랜덤 문구 설정
   useEffect(() => {
-    loadRandomPhrase()
-  }, [loadRandomPhrase])
+    if (!phrasesLoading && phrases.length > 0 && !currentPhrase) {
+      const randomIndex = Math.floor(Math.random() * phrases.length)
+      setCurrentPhrase(phrases[randomIndex])
+    }
+  }, [phrasesLoading, phrases, currentPhrase])
 
-  if (!isLoaded) return null
+  if (!isLoaded || phrasesLoading) return null
 
   return (
     <div className="flex-1 flex flex-col items-center justify-center py-4 -mx-4 px-4 rounded-2xl" style={{ background: 'var(--retro-bg)' }}>

@@ -1,6 +1,7 @@
 export interface Phrase {
   id: string
   content: string
+  category: string
   is_user_submitted: boolean
   created_at: string
 }

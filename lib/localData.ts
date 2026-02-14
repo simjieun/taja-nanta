@@ -28,6 +28,7 @@ export function addPhrase(content: string): Phrase {
   const newPhrase: Phrase = {
     id: `user_${Date.now()}`,
     content,
+    category: '직장공감',
     is_user_submitted: true,
     created_at: new Date().toISOString()
   }
