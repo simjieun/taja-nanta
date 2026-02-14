@@ -5,9 +5,11 @@ import { usePathname } from 'next/navigation'
 import ThemeToggle from './ThemeToggle'
 
 const NAV_ITEMS = [
-  { href: '/', label: '타자연습', icon: '⌨️' },
-  { href: '/phrases', label: '문구추가', icon: '✏️' },
+  { href: '/practice', label: '타자연습', icon: '⌨️' },
+  { href: '/phrases', label: '문구', icon: '✏️' },
   { href: '/stats', label: '통계', icon: '📊' },
+  { href: '/tips', label: '팁', icon: '💡' },
+  { href: '/about', label: '소개', icon: 'ℹ️' },
 ] as const
 
 export default function Header() {
