@@ -115,18 +115,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <head>
-        <script
+    <head>
+      <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
+      />
+      <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2532708487251314"
+          crossOrigin="anonymous"
+      />
+    </head>
+    <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-1 flex flex-col max-w-7xl w-full mx-auto px-4 py-8">
+    >
+    <div className="min-h-screen flex flex-col">
+      <Header/>
+      <main className="flex-1 flex flex-col max-w-7xl w-full mx-auto px-4 py-8">
             {children}
           </main>
           <Footer />
